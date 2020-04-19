@@ -50,6 +50,7 @@ export default class GradeForm extends React.Component {
         <label>
           <div className="fas fa-user"></div>
           <input
+            className="mx-5"
             type="text"
             id="name"
             value={name}
@@ -59,6 +60,7 @@ export default class GradeForm extends React.Component {
         <label>
           <div className="far fa-list-alt"></div>
           <input
+            className="mx-5"
             type="text"
             id="course"
             value={course}
@@ -68,15 +70,16 @@ export default class GradeForm extends React.Component {
         <label>
           <div className="fas fa-graduation-cap"></div>
           <input
+            className="mx-5"
             type="text"
             id="grade"
             value={grade}
             placeholder="Grade"
             onChange={this.handleChange} />
         </label>
-        <div className="input-group-append">
+        <div className="input-group-append buttonContainer">
           <button type="submit" className="btn btn-primary">Add</button>
-          <button type="reset" onClick={this.handleReset}>Cancel</button>
+          <button type="reset" className="mx-2" onClick={this.handleReset}>Cancel</button>
         </div>
       </form>
     );
