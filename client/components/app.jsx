@@ -60,13 +60,12 @@ class App extends React.Component {
   }
 
   deleteGrades(gradeId) {
-    const prevGrades = this.state.grades;
+    const prevGrades = this.state.grades.slice();
     fetch(`/api/grades/${gradeId}`, {
       method: 'DELETE'
     })
       .then(response => { return response.json(); })
       .then(data => {
-        prevGrades.slice();
         for (let i = 0; i < prevGrades.length; i++) {
           if (prevGrades[i].id === gradeId) {
             prevGrades.splice(i);

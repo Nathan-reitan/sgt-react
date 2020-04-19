@@ -11,12 +11,6 @@
       "name": "Brendan Eich",
       "course": "JavaScript",
       "grade": 100
-    },
-    {
-      "id": 32,
-      "name": "Douglas Crockford",
-      "course": "JavaScript",
-      "grade": 100
     }
   ]
 }
