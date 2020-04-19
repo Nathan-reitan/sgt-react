@@ -37,7 +37,7 @@ class App extends React.Component {
     if (!average) {
       return 'Calculating';
     }
-    return average / grades.length;
+    return parseInt(average / grades.length);
   }
 
   addGrades(newGrade) {
