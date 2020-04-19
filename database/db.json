@@ -11,42 +11,6 @@
       "name": "Brendan Eich",
       "course": "JavaScript",
       "grade": 100
-    },
-    {
-      "id": 32,
-      "name": "Douglas Crockford",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
-      "name": "Nathan ",
-      "course": "Magical Coding",
-      "grade": "100",
-      "id": 33
-    },
-    {
-      "name": "Nathan ",
-      "course": "Magical Coding",
-      "grade": "20",
-      "id": 34
-    },
-    {
-      "name": "Kenzie",
-      "course": "Psych",
-      "grade": "500",
-      "id": 35
-    },
-    {
-      "name": "Nathan ",
-      "course": "Magical Coding",
-      "grade": "20",
-      "id": 36
-    },
-    {
-      "name": "Nathan ",
-      "course": "Mystical Raiding",
-      "grade": "450",
-      "id": 37
     }
   ]
 }
