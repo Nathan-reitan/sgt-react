@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from './header';
+import GradeTable from './gradeTable';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,63 +26,27 @@ class App extends React.Component {
       .catch(error => console.error('Error:', error));
   }
 
+  getAverageGrade() {
+    const grades = this.state.grades;
+    let average = 0;
+    for (let i = 0; i < grades.length; i++) {
+      average += grades[i].grade;
+    }
+    return average / grades.length;
+  }
+
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col pt-5">
-            <Header/>
+            <Header average={this.getAverageGrade()}/>
             <GradeTable grades={this.state.grades}/>
           </div>
         </div>
       </div>
     );
   }
-}
-
-class Header extends React.Component {
-  render() {
-    return <h1>Student Grade Table</h1>;
-  }
-}
-
-function Grade(props) {
-  const grade = props.grade;
-  const idAttr = `${grade.id}`;
-  return (
-    <tr id={idAttr}>
-      <th scope="row">{idAttr}</th>
-      <td>{grade.name}</td>
-      <td>{grade.course}</td>
-      <td>{grade.grade}</td>
-    </tr>
-  );
-}
-
-function GradeTable(props) {
-  return (
-    <table className="table table-striped">
-      <thead>
-        <tr>
-          <th scope='col'>Student ID</th>
-          <th scope='col'>Student Name</th>
-          <th scope='col'>Course</th>
-          <th scope='col'>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          props.grades.map(grade => {
-            return (
-              <Grade
-                key={grade.id}
-                grade={grade}/>
-            );
-          })
-        }
-      </tbody>
-    </table>
-  );
 }
 
 export default App;
