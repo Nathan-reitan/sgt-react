@@ -1,3 +1,11 @@
+body{
+  background-color: darkcyan;
+}
+
+.containerBackground{
+  background-color: darkturquoise;
+}
+
 .header{
   display: flex;
   justify-content: space-between;
@@ -5,6 +13,12 @@
 
 .form{
   font-size: 1.5em;
+}
+
+.delete{
+  background-color: rgb(195, 61, 49);
+  border: rgb(59, 54, 54) 3px groove;
+  height: 25px;
 }
 
 label>div{
@@ -19,4 +33,5 @@ label>div{
 
 input{
   margin: 0 0 0 15px;
+  background-color: lightgreen;
 }

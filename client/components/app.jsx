@@ -81,7 +81,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container containerBackground shadow-sm">
         <div className="col pt-5">
           <Header average={this.getAverageGrade()}/>
           <div className="row">
