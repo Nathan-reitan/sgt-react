@@ -1,16 +1,22 @@
 {
   "grades": [
     {
-      "id": 5,
-      "name": "Kyle Simpson",
-      "course": "JavaScript",
-      "grade": 100
+      "name": "Nathan Reitan",
+      "course": "React",
+      "grade": "100",
+      "id": 1
     },
     {
-      "id": 12,
-      "name": "Brendan Eich",
-      "course": "JavaScript",
-      "grade": 100
+      "name": "Kenzie",
+      "course": "Psych",
+      "grade": "150",
+      "id": 2
+    },
+    {
+      "name": "John Doe",
+      "course": "Indendified",
+      "grade": "10",
+      "id": 3
     }
   ]
 }

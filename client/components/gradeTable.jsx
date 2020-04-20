@@ -9,14 +9,16 @@ function Grade(props) {
       <td>{grade.name}</td>
       <td>{grade.course}</td>
       <td>{grade.grade}</td>
-      <td><button onClick={() => props.remove(grade.id)}>DELETE</button></td>
+      <td>
+        <button onClick={() => props.remove(grade.id)} className="btn btn-danger"><span className="fas fa-trash-alt"></span></button>
+      </td>
     </tr>
   );
 }
 
 function GradeTable(props) {
   return (
-    <table className="table table-striped">
+    <table className="table table-dark table-striped">
       <thead>
         <tr>
           <th scope='col'>Student ID</th>
