@@ -21,17 +21,35 @@ body{
   height: 25px;
 }
 
-label>div{
-  height: 28px;
-  width: 28px;
-}
-
 .buttonContainer{
   position: relative;
   left: 45%;
 }
 
+.modalOverlay{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vh;
+}
+
+.modalContent{
+   background-color: white;
+   border: 5px solid rgb(175, 218, 32);
+   width: 30%;
+}
+
+label>div{
+  height: 28px;
+  width: 28px;
+}
+
 input{
-  margin: 0 0 0 15px;
   background-color: lightgreen;
+}
+
+.hidden{
+  display: none;
 }
