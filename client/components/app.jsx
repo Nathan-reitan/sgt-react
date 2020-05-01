@@ -16,7 +16,6 @@ class App extends React.Component {
     this.addGrades = this.addGrades.bind(this);
     this.deleteGrades = this.deleteGrades.bind(this);
     this.reviseGrade = this.reviseGrade.bind(this);
-    this.toggleTrue = this.toggleTrue.bind(this);
     this.toggleFalse = this.toggleFalse.bind(this);
     this.getOneGrade = this.getOneGrade.bind(this);
     this.modalRef = React.createRef();
@@ -91,10 +90,9 @@ class App extends React.Component {
     fetch(`/api/grades/${gradeId}`)
       .then(resp => resp.json())
       .then(data => {
-        return this.setState(grade => ({ grade: data }));
+        return this.setState(grade => ({ grade: data, currentlyEditing: true }));
       })
       .catch(error => console.error('Error:', error));
-    setTimeout(() => { this.toggleTrue(); }, 500);
   }
 
   reviseGrade(gradeId, updGrade) {
@@ -117,10 +115,6 @@ class App extends React.Component {
       })
       .then(newArray => { return this.setState(state => ({ grades: newArray })); })
       .catch(error => console.error('Error:', error));
-  }
-
-  toggleTrue() {
-    return this.setState(state => ({ currentlyEditing: true }));
   }
 
   toggleFalse() {
