@@ -1,9 +1,9 @@
 body{
-  background-color: darkcyan;
+  background-color:#02AFAE;
 }
 
 .containerBackground{
-  background-color: darkturquoise;
+  background-color: #FDC667;
 }
 
 .header{
@@ -37,7 +37,7 @@ body{
 
 .modalContent{
    background-color: white;
-   border: 5px solid rgb(175, 218, 32);
+   border: 5px solid #B0E4E7;
    width: 30%;
 }
 
@@ -47,7 +47,7 @@ label>div{
 }
 
 input{
-  background-color: lightgreen;
+  background-color:#C978B8;
 }
 
 .hidden{
