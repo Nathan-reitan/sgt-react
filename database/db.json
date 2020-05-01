@@ -3,7 +3,7 @@
     {
       "name": "Nathan Reitan",
       "course": "React",
-      "grade": "100",
+      "grade": "200",
       "id": 1
     },
     {
@@ -15,8 +15,15 @@
     {
       "name": "John Doe",
       "course": "Indendified",
-      "grade": "10",
+      "grade": "0",
       "id": 3
+    },
+    {
+      "name": "Nathan ",
+      "course": "Magical Coding",
+      "grade": "500",
+      "editing": null,
+      "id": 4
     }
   ]
 }

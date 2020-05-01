@@ -1,16 +1,21 @@
 import React from 'react';
 
-export default class GradeForm extends React.Component {
+export default class ReviseForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      course: '',
-      grade: ''
+      id: props.grade.id,
+      name: props.grade.name,
+      course: props.grade.course,
+      grade: props.grade.grade
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.editing = this.props.currentlyEditing;
+  }
+
+  componentDidMount() {
   }
 
   handleChange(event) {
@@ -19,17 +24,19 @@ export default class GradeForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const newGrade = {
+    const gradeId = this.state.id;
+    const updGrade = {
       name: this.state.name,
       course: this.state.course,
       grade: this.state.grade
     };
-    this.props.onSubmit(newGrade);
+    this.props.onSubmit(gradeId, updGrade);
     this.setState({
       name: '',
       course: '',
       grade: ''
     });
+    this.props.notEditing();
   }
 
   handleReset(event) {
@@ -39,6 +46,7 @@ export default class GradeForm extends React.Component {
       course: '',
       grade: ''
     });
+    this.props.notEditing();
   }
 
   render() {
@@ -55,7 +63,7 @@ export default class GradeForm extends React.Component {
             id="name"
             value={name}
             placeholder="Name"
-            onChange={this.handleChange}/>
+            onChange={this.handleChange} />
         </label>
         <label>
           <div className="far fa-list-alt"></div>
@@ -77,10 +85,8 @@ export default class GradeForm extends React.Component {
             placeholder="Grade"
             onChange={this.handleChange} />
         </label>
-        <div className="input-group-append buttonContainer">
-          <button type="submit" className="btn btn-primary">Add Grade</button>
-          <button type="reset" className="mx-2 btn btn-secondary" onClick={this.handleReset}>Cancel</button>
-        </div>
+        <button type="submit" className="btn btn-primary">Submit Revision</button>
+        <button type="reset" className="mx-2 btn btn-secondary" onClick={this.handleReset}>Cancel</button>
       </form>
     );
   }
