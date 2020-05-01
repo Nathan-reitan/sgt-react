@@ -9,13 +9,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       grades: [],
+      grade: {},
       currentlyEditing: false
     };
     this.getGrades = this.getGrades.bind(this);
     this.addGrades = this.addGrades.bind(this);
     this.deleteGrades = this.deleteGrades.bind(this);
     this.reviseGrade = this.reviseGrade.bind(this);
-    this.toggleEditing = this.toggleEditing.bind(this);
+    this.toggleTrue = this.toggleTrue.bind(this);
+    this.toggleFalse = this.toggleFalse.bind(this);
+    this.getOneGrade = this.getOneGrade.bind(this);
     this.modalRef = React.createRef();
   }
 
@@ -84,54 +87,60 @@ class App extends React.Component {
       .catch(error => console.error('Error:', error));
   }
 
-  // reviseGrade(gradeId, updGrade) {
-  //   const prevGrades = this.state.grades.slice();
-  //   fetch(`/api/grades/${gradeId}`, {
-  //     method: 'PATCH',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(updGrade)
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => console.log(data));
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     for (let i = 0; i < prevGrades.length; i++) {
-  //       if (prevGrades[i].id === gradeId) {
-  //         prevGrades[i] = data;
-  //         return prevGrades;
-  //       }
-  //     }
-  //   })
-  //   .then(newArray => { return this.setState(state => ({ grades: newArray })); })
-  //   .catch(error => console.error('Error:', error));
-  // }
+  getOneGrade(gradeId) {
+    fetch(`/api/grades/${gradeId}`)
+      .then(resp => resp.json())
+      .then(data => {
+        return this.setState(grade => ({ grade: data }));
+      })
+      .catch(error => console.error('Error:', error));
+    setTimeout(() => { this.toggleTrue(); }, 500);
+  }
 
-  toggleEditing() {
-    return this.setState(state => ({ currentlyEditing: !state.currentlyEditing }));
+  reviseGrade(gradeId, updGrade) {
+    const prevGrades = this.state.grades.slice();
+    fetch(`/api/grades/${gradeId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updGrade)
+    })
+      .then(response => response.json())
+      .then(data => {
+        for (let i = 0; i < prevGrades.length; i++) {
+          if (prevGrades[i].id === gradeId) {
+            prevGrades[i] = data;
+            return prevGrades;
+          }
+        }
+      })
+      .then(newArray => { return this.setState(state => ({ grades: newArray })); })
+      .catch(error => console.error('Error:', error));
+  }
+
+  toggleTrue() {
+    return this.setState(state => ({ currentlyEditing: true }));
+  }
+
+  toggleFalse() {
+    return this.setState(state => ({ currentlyEditing: false }));
   }
 
   render() {
-    const modalClass = this.state.currentlyEditing
-      ? ''
-      : 'hidden';
     return (
       <div className="container containerBackground shadow-sm">
-        <div className="modalOverlay d-flex flex-column">
-          <div ref={this.modalRef}className={`modalContent form ${modalClass}`}>
-            <h5>Revise grade here.</h5>
-            <ReviseForm editing={this.state.currentlyEditing}/>
-          </div>
-        </div>
         <div className="col pt-5">
           <Header average={this.getAverageGrade()}/>
           <div className="row">
             <div className="col-7">
-              <GradeTable grades={this.state.grades} remove={this.deleteGrades} editing={this.toggleEditing} />
+              <GradeTable grades={this.state.grades} remove={this.deleteGrades} editing={this.toggleTrue} retrieve={this.getOneGrade}/>
             </div>
             <div className="col-5 form">
-              <GradeForm onSubmit={this.addGrades} />
+              {this.state.currentlyEditing === false
+                ? <GradeForm onSubmit={this.addGrades} />
+                : <ReviseForm editing={this.state.currentlyEditing} onSubmit={this.reviseGrade} notEditing={this.toggleFalse} retrieve={this.getOneGrade} grade={this.state.grade} />
+              }
             </div>
           </div>
         </div>

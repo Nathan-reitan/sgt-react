@@ -78,7 +78,7 @@ export default class GradeForm extends React.Component {
             onChange={this.handleChange} />
         </label>
         <div className="input-group-append buttonContainer">
-          <button type="submit" className="btn btn-primary">Add</button>
+          <button type="submit" className="btn btn-primary">Add Grade</button>
           <button type="reset" className="mx-2 btn btn-secondary" onClick={this.handleReset}>Cancel</button>
         </div>
       </form>

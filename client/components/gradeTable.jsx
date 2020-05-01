@@ -12,7 +12,7 @@ function Grade(props) {
       <td>{grade.grade}</td>
       <td>
         <button onClick={() => props.remove(grade.id)} className="btn btn-danger"><span className="fas fa-trash-alt"></span></button>
-        <button onClick={() => props.editing()} className="btn btn-success"><span className="far fa-edit"></span></button>
+        <button onClick={() => props.retrieve(grade.id)} className="btn btn-success"><span className="far fa-edit"></span></button>
       </td>
     </tr>
   );
@@ -35,12 +35,12 @@ function GradeTable(props) {
           {
             props.grades.map(grade => {
               return (
-
                 <Grade
                   key={grade.id}
                   grade={grade}
                   remove={props.remove}
                   editing = {props.editing}
+                  retrieve = {props.retrieve}
                 />
               );
             })
