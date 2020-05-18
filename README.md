@@ -16,11 +16,8 @@ See the live site here - [Reitan SGT React](https://reitansgt.nathanreitan.com)
 
 1. User can view grades
 2. User can add a grade
-![add-a-grade-gif](https://github.com/Nathan-reitan/sgt-react/tree/master/assets/readMeAssets/SGR-React-add-grade.gif)
 3. User can delete a grade
-![delete-a-grade-gif](https://github.com/Nathan-reitan/sgt-react/tree/master/assets/readMeAssets/SGR-React-Delete-Grade.gif)
 4. User can revise a grade
-![revise-a-grade-gif](https://github.com/Nathan-reitan/sgt-react/tree/master/assets/readMeAssets/SGR-revise-grade.gif)
 
 ## System Requirements
 * Node.js 10 or higher
