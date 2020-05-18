@@ -1,4 +1,4 @@
-# sgt-react
+# SGT-React
 ## A small React application where the user can view, add, revise, and delete grades from a table
 
 ## Live Site
