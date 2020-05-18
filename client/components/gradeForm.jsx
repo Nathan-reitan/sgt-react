@@ -46,7 +46,7 @@ export default class GradeForm extends React.Component {
     const course = this.state.course;
     const grade = this.state.grade;
     return (
-      <form className="input-group mb-4" onSubmit={this.handleSubmit}>
+      <form className="d-flex input-group mb-4 formBackground" onSubmit={this.handleSubmit}>
         <label>
           <div className="fas fa-user"></div>
           <input
@@ -78,8 +78,8 @@ export default class GradeForm extends React.Component {
             onChange={this.handleChange} />
         </label>
         <div className="input-group-append buttonContainer">
-          <button type="submit" className="btn btn-primary">Add Grade</button>
-          <button type="reset" className="mx-2 btn btn-secondary" onClick={this.handleReset}>Cancel</button>
+          <button type="submit" className="btn add">Add Grade</button>
+          <button type="reset" className="mx-2 btn cancel" onClick={this.handleReset}>Cancel</button>
         </div>
       </form>
     );
