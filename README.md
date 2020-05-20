@@ -34,7 +34,7 @@ See the live site here - [Reitan SGT React](https://reitansgt.nathanreitan.com)
 npm install
 ```
 
-3. Start the project.  Once your system finishes compiling you can view the application by opening http;//localhost:3000 in your browser.
+3. Start the project.  Once your system finishes compiling you can view the application by opening http://localhost:3000 in your browser.
 ```
 npm run dev
 ```
