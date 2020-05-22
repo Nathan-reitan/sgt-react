@@ -22,8 +22,7 @@ body{
 }
 
 .buttonContainer{
-  position: relative;
-  left: 45%;
+  width: 100%;
 }
 
 .modalOverlay{
@@ -44,6 +43,10 @@ body{
 label>div{
   height: 28px;
   width: 28px;
+}
+
+label{
+  width: 100%;
 }
 
 input{

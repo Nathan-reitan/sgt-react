@@ -48,19 +48,21 @@ export default class GradeForm extends React.Component {
     return (
       <form className="d-flex input-group mb-4 formBackground" onSubmit={this.handleSubmit}>
         <label>
-          <div className="fas fa-user"></div>
-          <input
-            className="mx-4"
-            type="text"
-            id="name"
-            value={name}
-            placeholder="Name"
-            onChange={this.handleChange}/>
+          <div className="fas fa-user mx-2"></div>
+          <span>
+            <input
+              className="col-10 m-2"
+              type="text"
+              id="name"
+              value={name}
+              placeholder="Name"
+              onChange={this.handleChange}/>
+          </span>
         </label>
         <label>
-          <div className="far fa-list-alt"></div>
+          <div className="far fa-list-alt mx-2"></div>
           <input
-            className="mx-4"
+            className="col-10 m-2"
             type="text"
             id="course"
             value={course}
@@ -68,16 +70,16 @@ export default class GradeForm extends React.Component {
             onChange={this.handleChange} />
         </label>
         <label>
-          <div className="fas fa-graduation-cap"></div>
+          <div className="fas fa-graduation-cap m-2"></div>
           <input
-            className="mx-4"
+            className="col-10 m-2"
             type="text"
             id="grade"
             value={grade}
             placeholder="Grade"
             onChange={this.handleChange} />
         </label>
-        <div className="input-group-append buttonContainer">
+        <div className="d-flex justify-content-end buttonContainer mx-2 px-1">
           <button type="submit" className="btn add">Add Grade</button>
           <button type="reset" className="mx-2 btn cancel" onClick={this.handleReset}>Cancel</button>
         </div>
