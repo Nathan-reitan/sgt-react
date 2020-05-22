@@ -1,9 +1,9 @@
 body{
-  background-color:#02AFAE;
+  background-color: gray;
 }
 
 .containerBackground{
-  background-color: #FDC667;
+  background-color: rgb(225, 246, 106);
 }
 
 .header{
@@ -22,8 +22,7 @@ body{
 }
 
 .buttonContainer{
-  position: relative;
-  left: 45%;
+  width: 100%;
 }
 
 .modalOverlay{
@@ -46,8 +45,26 @@ label>div{
   width: 28px;
 }
 
+label{
+  width: 100%;
+}
+
 input{
-  background-color:#C978B8;
+  background-color:rgb(180, 188, 226);
+}
+
+.add{
+  background-color: rgb(0, 110, 255);
+  border: outset 1px black;
+}
+
+.cancel{
+  background-color: rgb(78, 86, 97);
+  border: outset 1px black;
+}
+
+.formBackground{
+  background-color: rgb(94, 163, 172);
 }
 
 .hidden{
